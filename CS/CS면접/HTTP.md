@@ -1,0 +1,78 @@
+# HTTP
+
+
+
+### HTTP란?
+
+HTTP는 **HyperText Transfer Protocol** 의 약자로 데이터를 주고받기 위해 정의한 통신 프로토콜이다.
+
+웹을 기준으로 브라우저와 서버 간에 데이터를 주고받기 위한 방식으로 HTTP 프로토콜을 사용하고 있다.
+
+
+
+### HTTP의 특징
+
+HTTP 프로토콜은 상태가 없는 (stateless) 프로토콜이다.
+
+상태가 없다는 말은 데이터를 주고 받기 위한 각각의 데이터 요청이 서로 독립적으로 관리가 된다는 말이다.
+
+이전에 보냈던 데이터 요청과 다음에 보낼 데이터 요청이 서로 관련이 없다는 의미이다.
+
+이러한 특징 덕분에 서버는 세션과 같은 별도의 추가 정보를 관리하지 않아도 되고, 다수의 요청 처리 및 서버의 부하를 줄일 수 있는 성능 상의 이점이 생긴다.
+
+HTTP 프로토콜은 일반적으로 TCP/IP 통신 위에서 동작하며 기본 포트는 80번이다.
+
+
+
+### URL이란?
+
+URL(Uniform Resource Locators) 은 서버에 자원(resource)을 요청하기 위해 입력하는 영문 주소이다.
+
+숫자로 되어있는 IP주소보다는 훨씬 기억하기 쉽다는 장점이 있다.
+
+브라우저에서는 이렇게 url로 되어있는 HTTP요청을 DNS(Domain Name System)을 통해 host에 해당하는 실제 IP 주소로 변환하여 서버에 요청(Request)을 보낸다.
+
+
+
+### URL구조
+
+![13](C:\Users\multicampus\Desktop\TIL\TIL\CS\CS면접\.md-images\13.jpg)
+
+https://www.mydomain.com:80/docs/search?category=javascript&lang=ko#intro 전체를 URI
+
+https://www.mydomain.com:80/docs/search 를 URL
+
+www.mydomain.com:80/docs/search?category=javascript&lang=ko#intro 를 URN
+
+https 를 scheme(Protocol)
+
+www.mydomain.com 를 Host(Domain)
+
+80을 Port
+
+docs/search 를 Path
+
+category=javascript&lang=ko 를 Query(Query String)
+
+#intro 를  Fragment
+
+
+
+### HTTP/1.1 과 HTTP/2.0의 차이는?
+
+HTTP/1.1은 기본적으로 커넥션 당 하나의 요청과 응답만 처리한다.
+
+즉, 여러 개의 요청을 한번에 전송할 수 없고 응답 또한 마찬가지다.
+
+따라서 HTML 문서 내에 포함된 여러 개의 리소스 요청, 즉 CSS 파일을 로드하는 link 태그, 이미지 파일을 로드하는 img 태그, 자바스크립트를 로드하는 script태그 등에 의한 리소스 요청이 개별적으로 전송되고 응답 또한 개별적으로 전송된다.
+
+이처럼 HTTP/1.1 은 리소스의 동시 전송이 불가능한 구조이므로 요청할 리소스의 개수에 비례하여 응답 시간도 증가하는 단점이 있다.
+
+
+
+HTTP/2.0 은 커넥션당 여러 개의 요청과 응답, 즉 다중 요청/응답이 가능하다.
+
+여러 리소스의 동시 전송이 가능하므로 HTTP/1.1에 비해 페이지 로드 속도가 약 50% 정도 빠르다고 알려져 있다.
+
+
+
